@@ -1,4 +1,4 @@
-package xyz.jange.object.test;
+package xyz.jangle.object.test;
 /**
  * As是A的子类
  * @author huhj

@@ -1,4 +1,4 @@
-package xyz.jange.object.test;
+package xyz.jangle.object.test;
 /**
  * @author huhj
  * @email  jangle@jangle.xyz

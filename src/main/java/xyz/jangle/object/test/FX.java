@@ -1,4 +1,4 @@
-package xyz.jange.object.test;
+package xyz.jangle.object.test;
 
 /**
  * FX泛型的缩写

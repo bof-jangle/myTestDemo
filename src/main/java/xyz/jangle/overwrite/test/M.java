@@ -3,7 +3,7 @@ package xyz.jangle.overwrite.test;
 import java.util.ArrayList;
 import java.util.List;
 
-import xyz.jange.object.test.A;
+import xyz.jangle.object.test.A;
 
 /**
  * 

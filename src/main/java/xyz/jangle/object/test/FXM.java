@@ -1,4 +1,4 @@
-package xyz.jange.object.test;
+package xyz.jangle.object.test;
 /**
  * FXM 泛型main方法的缩写  Java的泛型其实是由Object实现的，包装了一下，不算真正的泛型。
  * @author huhj
