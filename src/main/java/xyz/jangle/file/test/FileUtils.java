@@ -26,6 +26,8 @@ public class FileUtils {
 			outPath.mkdirs();
 		}
 		File outFile = new File(path+"/"+filename);
+		System.out.println("absPath"+outPath.getAbsolutePath());
+		System.out.println("absFile.absPath"+outPath.getAbsoluteFile().getAbsolutePath());
 		FileOutputStream out;
 		try {
 			out = new FileOutputStream(outFile);
@@ -38,6 +40,17 @@ public class FileUtils {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public static void main(String[] args) {
+		String path = "D:/f/f/f";
+		File outPath = new File(path );
+		if(!outPath.exists()) {
+			System.out.println("不存在路径"+path+"，开始创建路径目录");
+			outPath.mkdirs();
+		}
+		System.out.println("        absPath"+outPath.getAbsolutePath());
+		System.out.println("absFile.absPath"+outPath.getAbsoluteFile().getAbsolutePath());
 	}
 
 }
