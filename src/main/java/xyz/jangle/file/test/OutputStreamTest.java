@@ -4,6 +4,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
 
 /** 
 * @author jangle E-mail: jangle@jangle.xyz
@@ -13,8 +16,30 @@ import java.io.IOException;
 public class OutputStreamTest {
 
 	public static void main(String[] args) {
-		testOutput();
-		testInsertFile();
+//		testOutput();
+//		testInsertFile();
+		testWriter();
+	}
+	
+	private static void testWriter() {
+		String path = "d:/logs/test/a/a/";
+		String fileName = "exchangeWriter.txt";
+		File filePath = new File(path);
+		if(!filePath.exists()) {
+			filePath.mkdirs();
+		}
+		File file = new File(path+fileName);
+		try {
+			FileOutputStream out = new FileOutputStream(file,true);	//第二个参数表示是否添加
+			OutputStreamWriter outputStreamWriter = new OutputStreamWriter(out,StandardCharsets.UTF_8);
+			PrintWriter printWriter = new PrintWriter(outputStreamWriter);
+			printWriter.print("文本内容的输出testWriter");
+			printWriter.flush();
+			printWriter.close();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		System.out.println("ok"); 
 	}
 	
 	/**
