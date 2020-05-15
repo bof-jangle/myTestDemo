@@ -11,18 +11,15 @@ import java.util.Scanner;
  * 注：要先启动ServerSocketTest
  * 
  * 2020年5月13日 11:54:35
+ * 
  * @author jangle
  *
  */
 public class SocketClientTest {
 
-	public static void main(String[] args) throws IOException {
-		Socket client = null;
-		Scanner scanner = null;
-		try {
-			client = new Socket("127.0.0.1", 8189);
-			scanner = new Scanner(client.getInputStream());
-			while(scanner.hasNextLine()) {
+	public static void main(String[] args) {
+		try (Socket client = new Socket("127.0.0.1", 8189); Scanner scanner = new Scanner(client.getInputStream())) {
+			while (scanner.hasNextLine()) {
 				String line = scanner.nextLine();
 				System.out.println(line);
 			}
@@ -30,15 +27,7 @@ public class SocketClientTest {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
-		} finally {
-			if(scanner != null) {
-				scanner.close();
-			}
-			if(client != null) {
-				client.close();
-			}
 		}
-		
 
 	}
 
