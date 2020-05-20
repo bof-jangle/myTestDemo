@@ -15,9 +15,11 @@ public class SynchronizedTest {
 	public static void main(String[] args) {
 
 		for (int i = 0; i < 10; i++) {
-			getThread().start();
-			System.out.println("10个线程创建完毕");
+			Thread thread = getThread();
+			thread.setName("线程"+i);
+			thread.start();
 		}
+		System.out.println("10个线程创建完毕");
 
 	}
 
@@ -26,8 +28,8 @@ public class SynchronizedTest {
 	 */
 	public static void syncBlockRun() {
 		synchronized (lock) {
-//		synchronized (i) {	
-			System.out.println(i++);
+//		synchronized (i) {		//ERROR 这个锁并无效果，因为每次对象都在变化
+			System.out.println(Thread.currentThread().getName()+"开始睡眠2秒。  i="+i++);
 			try {
 				Thread.sleep(2000L);
 			} catch (InterruptedException e) {
@@ -55,7 +57,6 @@ public class SynchronizedTest {
 		Runnable r = () -> {
 			SynchronizedTest.syncBlockRun();
 		};
-		System.out.println("创建了一个线程");
 		return new Thread(r);
 	}
 
