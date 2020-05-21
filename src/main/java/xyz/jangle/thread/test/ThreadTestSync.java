@@ -9,6 +9,8 @@ public class ThreadTestSync extends Thread {
 
 	public static Integer i = 0;		// 用于自增计数
 
+	public static Object lock = new Object();
+	
 	private int a;
 
 	public ThreadTestSync(int a) {
@@ -18,8 +20,14 @@ public class ThreadTestSync extends Thread {
 
 	@Override
 	public void run() {
-		synchronized (i) {
+//		synchronized (lock) {	//这个锁可以进行方法的同步，每秒进行一次输出，并且线程不是顺序的。
+		synchronized (i) {		//ERROR 这个锁并无效果
 			System.out.println("a=" + a + "这是一个单独线程的输出i" + i++);
+			try {
+				Thread.sleep(1000L);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 		}
 		super.run();
 	}
