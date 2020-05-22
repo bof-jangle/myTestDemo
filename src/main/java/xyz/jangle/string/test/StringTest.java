@@ -12,10 +12,10 @@ public class StringTest {
 		String ss = "123";
 		String sss = "123";
 		String ssss = new String("123");
-		System.out.println(s==ss);		//false
-		System.out.println(ss==sss);	//true	指向了相同的内存空间。
-		System.out.println(sss==ssss);	//false	
-		System.out.println(ssss==s);	//false 内容相同，但是是两个对象。
+		System.out.println("s==ss:"+(s==ss));		//false
+		System.out.println("ss==sss:"+(ss==sss));	//true	指向了相同的内存空间。
+		System.out.println("sss==ssss:"+(sss==ssss));	//false	
+		System.out.println("ssss==s:"+(ssss==s));	//false 内容相同，但是是两个对象。
 		
 		
 		sss = sss+"4";
