@@ -6,6 +6,8 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /** 
  * 重入锁 和 条件对象   加锁，等待，通知等操作的DEMO
+ * 
+ * 重入的含义是：不同的对象创建不同的ReentrantLock对象锁，那么他们互不干扰（- - ！ 这不是很正常吗）
 * @author jangle E-mail: jangle@jangle.xyz
 * @version 2020年5月20日 下午6:08:54 
 * 类说明 
