@@ -14,12 +14,16 @@ public class InterruptTest {
 //		Thread thread = ippThreadInterruptByException();  //使用异常中断线程
 //		Thread thread = ippThreadInterruptThrowsException();  //效果同上
 //		Thread thread = ippThreadError(); //这个线程无法被中断
-		thread.start();
+		
+		thread.start();	// 开始执行
+		
+		//等待2秒
 		try {
 			Thread.sleep(2000L);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+		// 执行中断
 		thread.interrupt();
 		/*
 		 * int j = 0; while(true) { System.out.println("j:" + j++); }
