@@ -15,5 +15,7 @@ import java.lang.annotation.Target;
 public @interface MyTestAnnotation {
 	
 	public String name();
+	
+	public String ppp() default "1";
 
 }
