@@ -16,6 +16,7 @@ public class M {
 		VideoConference conference = new VideoConference(10);
 		// 开始会议
 		new Thread(conference).start();
+		// 构造10个参会者
 		for (int i = 0; i < 10; i++) {
 			new Thread(new Participant(conference, "参会者" + i)).start();
 		}
