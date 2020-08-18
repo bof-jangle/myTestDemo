@@ -4,6 +4,7 @@ import java.util.concurrent.RejectedExecutionHandler;
 import java.util.concurrent.ThreadPoolExecutor;
 
 /**
+ * 	拒绝策略句柄
  * @author jangle
  * @email jangle@jangle.xyz
  * @time 2020年8月17日 下午4:03:18
