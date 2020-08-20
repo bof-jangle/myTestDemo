@@ -29,6 +29,7 @@ public class M {
 		ExecutorService threadPool = Executors.newCachedThreadPool();
 		String result;
 		try {
+			// invokeAny方法会阻塞，直到其中一个正确的结果返回，或全部失败（ExecutionException）。
 			result = threadPool.invokeAny(taskList);
 			System.out.println("Main:result:使用了"+result);
 		} catch (InterruptedException e) {
@@ -39,6 +40,7 @@ public class M {
 			System.out.println("Main:用户验证失败");
 			e.printStackTrace();
 		}
+		System.out.println("Main:shutdown");
 		threadPool.shutdown();
 		System.out.println("Main:执行结束");
 	}
