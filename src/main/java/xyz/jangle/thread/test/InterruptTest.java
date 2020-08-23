@@ -39,7 +39,7 @@ public class InterruptTest {
 			while (!Thread.currentThread().isInterrupted()) {
 				System.out.println(i++);
 				// 1、ERROR
-				/* 如果在这里添加sleep，那么这个线程无法被中断。 因为InterruptedException会清楚中断状态
+				/* 如果在这里添加sleep，那么这个线程无法被中断。 因为InterruptedException会清除中断状态
 				 * 中断状态也就是isInterrupted返回的布尔值。
 				 * @impotent 错误的行为
 				try {
