@@ -3,7 +3,8 @@ package xyz.jangle.thread.test.n6_2.create;
 import java.util.Date;
 
 /**
- * 	普通类，雇员信息
+ * 普通类，雇员信息
+ * 
  * @author jangle
  * @email jangle@jangle.xyz
  * @time 2020年9月1日 下午6:03:57
@@ -73,6 +74,11 @@ public class Person implements Comparable<Person> {
 
 	public void setCoeficient(double coeficient) {
 		this.coeficient = coeficient;
+	}
+
+	@Override
+	public String toString() {
+		return firstName + " " + lastName;
 	}
 
 }
