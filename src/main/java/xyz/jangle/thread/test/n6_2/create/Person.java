@@ -1,5 +1,6 @@
 package xyz.jangle.thread.test.n6_2.create;
 
+import java.util.Comparator;
 import java.util.Date;
 
 /**
@@ -18,14 +19,19 @@ public class Person implements Comparable<Person> {
 	private int salary;
 	private double coeficient;
 
+	private static Comparator<Person> comparator = Comparator.comparing(Person::getLastName)
+			.thenComparing(Person::getFirstName);
+
 	@Override
 	public int compareTo(Person o) {
-		int compareLastNames = this.getLastName().compareTo(o.getLastName());
-		if (compareLastNames != 0) {
-			return compareLastNames;
-		} else {
-			return this.getFirstName().compareTo(o.getFirstName());
-		}
+
+		/*
+		 * int compareLastNames = this.getLastName().compareTo(o.getLastName()); if
+		 * (compareLastNames != 0) { return compareLastNames; } else { return
+		 * this.getFirstName().compareTo(o.getFirstName()); }
+		 */
+		return comparator.compare(this, o);
+
 	}
 
 	public int getId() {
@@ -79,6 +85,21 @@ public class Person implements Comparable<Person> {
 	@Override
 	public String toString() {
 		return firstName + " " + lastName;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof Person) {
+			return this.compareTo((Person) obj) == 0;
+		} else {
+			return false;
+		}
+	}
+
+	@Override
+	public int hashCode() {
+		String sequence = this.getLastName() + this.getFirstName();
+		return sequence.hashCode();
 	}
 
 }
