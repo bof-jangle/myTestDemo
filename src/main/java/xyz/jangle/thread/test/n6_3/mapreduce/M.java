@@ -36,7 +36,7 @@ public class M {
 		double min = doubleStream.min().getAsDouble();
 		System.out.println("sum:" + sum + ",average:" + average + ",max:" + max + ",min:" + min);
 
-		// 第一种reduce方法
+		// 第一种reduce方法（该方法需要符合结合律）
 		List<Point> points = PointGenerator.generatorPointList(10000);
 		Optional<Point> opt = points.parallelStream().reduce((p1, p2) -> {
 			Point point = new Point();
@@ -46,12 +46,12 @@ public class M {
 		});
 		System.out.println("point:x:" + opt.get().getX() + "y:" + opt.get().getY());
 
-		// 第二种reduce方法
+		// 第二种reduce方法（两个参数：1同一律值，2结合律）
 		List<Person> persons = PersonGenerator.generatePersonList(10000);
 		Integer salaryTotal = persons.parallelStream().map(p -> p.getSalary()).reduce(0, (s1, s2) -> s1 + s2);
 		System.out.println("SalaryTotal:" + salaryTotal);
 
-		// 第三种reduce方法
+		// 第三种reduce方法（三个参数：1同一律值，2转换运算，3结合律）
 		Integer value = 0;
 		value = persons.parallelStream().reduce(value, (n, p) -> p.getSalary() > 10000 ? n + 1 : n,
 				(n1, n2) -> n1 + n2);
