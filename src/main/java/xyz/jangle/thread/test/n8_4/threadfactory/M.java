@@ -19,7 +19,6 @@ public class M {
 		Thread thread = factory.newThread(task);
 		thread.start();
 		thread.join();
-		System.out.println("M: 线程信息："+thread);
 		System.out.println("M: 结束");
 
 	}

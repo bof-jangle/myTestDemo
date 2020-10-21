@@ -15,6 +15,7 @@ public class MyTask implements Runnable {
 	public void run() {
 
 		try {
+			System.out.println("Task:普通的任务，睡眠2秒");
 			TimeUnit.SECONDS.sleep(2);
 		} catch (InterruptedException e) {
 			e.printStackTrace();

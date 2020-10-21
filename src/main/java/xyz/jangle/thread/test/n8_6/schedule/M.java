@@ -17,6 +17,7 @@ public class M {
 		MyScheduledThreadPoolExecutor executor = new MyScheduledThreadPoolExecutor(4);
 		Task task = new Task();
 		System.out.println("Main: " + new Date());
+		// 将普通任务提交给线程池（该方法会将普通的任务包装成特别的任务MyScheduledThreadPoolExecutor.decorateTask()方法）
 		executor.schedule(task, 1, TimeUnit.SECONDS);
 		TimeUnit.SECONDS.sleep(6);
 		task = new Task();

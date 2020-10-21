@@ -3,7 +3,7 @@ package xyz.jangle.thread.test.n7_2.concurrentlinkeddeque;
 import java.util.concurrent.ConcurrentLinkedDeque;
 
 /**
- * 消费队列元素的类
+ * 消费队列元素的任务类
  * @author jangle
  * @email jangle@jangle.xyz
  * @time 2020年9月10日 下午7:24:53

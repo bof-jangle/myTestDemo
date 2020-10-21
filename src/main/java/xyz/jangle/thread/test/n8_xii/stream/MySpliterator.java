@@ -55,6 +55,7 @@ public class MySpliterator implements Spliterator<Item> {
 		int mid = start + ((end - start) / 2);
 		int newStart = mid;
 		int newEnd = end;
+		// 修改当前end的值，因为对其进行了拆分。
 		end = mid;
 		System.out.println("trySplit:end : start=" + start + ",mid=" + mid + ",end=" + end + ",newStart=" + newStart
 				+ ",newEnd=" + newEnd + ",current=" + current);
