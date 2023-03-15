@@ -31,7 +31,7 @@ public class M {
 		System.out.println("M:完成停止VolatileTask:" + new Date());
 
 		System.out.println("M:开始停止Task:" + new Date());
-		flag.flag = true;
+		flag.flag = false;
 		System.out.println("M:完成停止Task:" + new Date());
 
 	}
